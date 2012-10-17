@@ -16,6 +16,10 @@ class User < ActiveRecord::Base
   validates :password_confirmation, presence: true, length: { minimum: 6 },
                                     allow_nil: false
 
+  def feed
+    # This is only a proto-feed
+    Micropost.where("user_id = ?", id)
+  end
 
   private
   
