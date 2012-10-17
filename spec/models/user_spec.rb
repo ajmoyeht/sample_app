@@ -18,6 +18,7 @@ describe User do
   it { should respond_to(:admin) }
   it { should respond_to(:authenticate) }
   it { should respond_to(:microposts) }
+  it { should respond_to(:feed) }
   
   it { should be_valid }
   it { should_not be_admin }
@@ -140,6 +141,7 @@ describe User do
         Micropost.find_by_id(micropost.id).should be_nil
       end
     end
+    
   end
 end
 
